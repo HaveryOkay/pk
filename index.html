@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打飞机之王</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .side {
+            width: 30%;
+            text-align: center;
+        }
+
+        .middle {
+            width: 40%;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #ff4500;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        button {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+
+        .counter {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>东安王培森 vs 晋江小张龙</h1>
+
+    <div class="container">
+        <!-- 左边：东安王培森 -->
+        <div class="side">
+            <h2>东安王培森</h2>
+            <img src="https://github.com/HaveryOkay/pk/blob/main/81734582021_.pic.jpg?raw=true" alt="飞机剪影">
+            <p>东安王培森，今天上班打飞机</p>
+            <button onclick="incrementCount('left')">点击帮大师来一发</button>
+            <div class="counter" id="left-count">点击次数：0</div>
+        </div>
+
+        <!-- 中间：打飞机图案 -->
+        <div class="middle">
+            <img src="https://th.bing.com/th/id/R.ac1ba118665812da895c184022e85cff?rik=BfxfUmUsfJAo4g&riu=http%3a%2f%2fn.sinaimg.cn%2fsinakd10021%2f0%2fw2048h1152%2f20230818%2f7d14-be8e72e4bf8d58cb18d8d23641797af6.jpg&ehk=EZ4KgI1%2bpQjBZl60QqDyZ%2fFQvn3Aflj7tjYJNoUirn8%3d&risl=&pid=ImgRaw&r=0" alt="打飞机图案">
+        </div>
+
+        <!-- 右边：晋江小张龙 -->
+        <div class="side">
+            <h2>晋江小张龙</h2>
+            <img src="https://github.com/HaveryOkay/pk/blob/main/91734582684_.pic.jpg?raw=true" alt="晋江小张龙图片">
+            <p>晋江小张龙，明天继续打飞机</p>
+            <button onclick="incrementCount('right')">点击帮大师来一发</button>
+            <div class="counter" id="right-count">点击次数：0</div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化计数器
+        let leftCount = 0;
+        let rightCount = 0;
+
+        // 增加计数并更新显示
+        function incrementCount(side) {
+            if (side === 'left') {
+                leftCount++;
+                document.getElementById('left-count').innerText = `大力撸次数：${leftCount}`;
+            } else if (side === 'right') {
+                rightCount++;
+                document.getElementById('right-count').innerText = `大力撸次数：${rightCount}`;
+            }
+        }
+    </script>
+</body>
+</html>
